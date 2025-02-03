@@ -96,7 +96,7 @@ header .navigation ul li .btnLogin-popup {
 }
 
 header .navigation ul li .btnLogin-popup:hover{
-    background-color: #05190A;
+    background-color: #c1a3e6;
     color: #fff;
 }
 
@@ -149,4 +149,5 @@ ul li a.active, ul li a:hover{
 }
 
 /* LOGO */
+
 
