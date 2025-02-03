@@ -1,159 +1,169 @@
-/* General Reset */
+/* ======= GLOBAL RESET ======= */
+/* Removes default padding and margin from all elements, ensuring a uniform layout */
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    color: #fff; /* Ensures all text is white by default */
+    box-sizing: border-box; /* Makes width & height calculations easier */
+    font-family: "Poppins", sans-serif; /* Sets default font */
+    color: #fff; /* Ensures all text by default is white */
 }
 
-/* Body Styling */
+/* ======= BODY STYLING ======= */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url("1.jpg"); /* Background image */
-    background-size: cover; /* Covers entire screen */
-    background-position: center; /* Centers image */
-    color: #fff; /* Keeps default text white */
+    display: flex; /* Uses flexbox for easy alignment */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    min-height: 100vh; /* Ensures full viewport height */
+    background-image: url("1.jpg"); /* Sets background image */
+    background-size: cover; /* Ensures image covers the entire background */
+    background-position: center; /* Centers the background image */
+    color: #fff; /* Ensures text remains white */
 }
 
-/* HEADER */
+/* ======= HEADER (Navigation Bar) ======= */
 header {
-    position: fixed;
+    position: fixed; /* Keeps the header fixed at the top */
     top: 0;
     left: 0;
+    width: 100%; /* Stretches across the full width of the page */
+    padding: 20px 100px; /* Adds space inside the header */
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent white background */
+    backdrop-filter: blur(10px); /* Blurs the background */
+    display: flex; /* Enables flexbox for better layout */
+    justify-content: space-between; /* Aligns elements on left & right */
+    align-items: center; /* Centers items vertically */
+    z-index: 99; /* Ensures the header stays on top */
+}
+
+/* ======= NAVIGATION MENU ======= */
+header .navigation ul {
+    float: right; /* Aligns the menu to the right */
+    margin-right: 20px; /* Adds right margin for spacing */
+}
+
+/* Navigation List Items */
+header .navigation ul li {
+    display: inline-block; /* Keeps items in one line */
+    line-height: 50px; /* Aligns menu items with the header height */
+    margin: 0.5px; /* Adds spacing between items */
+}
+
+/* Navigation Links */
+header .navigation ul li a {
+    position: relative;
+    font-size: 1.1em; /* Slightly larger text */
+    color: #fff; /* Makes text white */
+    text-decoration: none; /* Removes underline */
+    font-weight: 500; /* Medium font weight */
+    margin-left: 40px; /* Adds spacing between menu items */
+    padding: 7px 13px; /* Adds padding inside buttons */
+    border-radius: 3px; /* Slightly rounded corners */
+    text-transform: uppercase; /* Converts text to uppercase */
+}
+
+/* Navigation Link Hover Effect (Underline Animation) */
+header .navigation ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px; /* Places underline below the text */
     width: 100%;
-    padding: 20px 100px;
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent white */
-    backdrop-filter: blur(10px); /* Blurry effect */
-    display: flex;
-    justify-content: space-between; /* Spreads items out */
-    align-items: center;
-    z-index: 99; /* Ensures header stays on top */
-}
-
-/* Logo / Company Name */
-.logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Navigation Menu */
-.navigation {
-    display: flex;
-    align-items: center;
-}
-
-.navigation ul {
-    display: flex; /* Makes menu items inline */
-    gap: 20px; /* Space between items */
-    list-style: none; /* Removes bullet points */
-}
-
-/* Menu Links */
-.navigation ul li a {
-    font-size: 1.2em;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 10px 15px;
+    height: 3px;
     border-radius: 5px;
-    transition: background 0.3s ease; /* Smooth hover effect */
+    transform-origin: 50% 50%; /* Ensures the effect grows from the center */
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.5s; /* Smooth transition */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Adds a glow effect */
+    background: linear-gradient(to right, #fff, #f3f3f3); /* Creates a gradient effect */
 }
 
-.navigation ul li a:hover {
-    background: #05190A; /* Dark green hover effect */
+/* Expands the underline on hover */
+header .navigation ul li a:hover::after {
+    transform-origin: right;
+    transform: scaleX(1); /* Expands fully */
 }
 
-/* TOP LOGIN BUTTON */
-.navigation ul li .btnLogin-popup {
-    width: 150px;
+/* ======= LOGIN BUTTON (Navigation) ======= */
+header .navigation ul li .btnLogin-popup {
+    width: 130px;
     height: 50px;
-    background: #4b0082; /* Dark Purple */
-    border: none;
-    border-radius: 30px; /* Rounded button */
-    cursor: pointer;
-    font-size: 1.2em;
-    color: #fff;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s;
+    background: transparent; /* Transparent background */
+    border: 2px solid #fff; /* White border */
+    outline: none;
+    border-radius: 6px; /* Slightly rounded corners */
+    cursor: pointer; /* Indicates it's clickable */
+    font-size: 1.1em;
+    color: #fff; /* White text */
+    font-weight: 500;
+    margin-left: 40px; /* Adds spacing from other menu items */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
 }
 
-.navigation ul li .btnLogin-popup:hover {
-    background-color: #6a0dad; /* Lighter Purple */
-    transform: scale(1.05); /* Slight zoom effect */
+/* Login Button Hover Effect */
+header .navigation ul li .btnLogin-popup:hover {
+    background-color: #c1a3e6; /* Light purple background */
+    color: #fff; /* Keeps text white */
 }
 
-/* BOTTOM LOGIN BUTTON */
-.login-container button {
-    width: 160px;
-    height: 50px;
-    background: #6a0dad;
-    border: none;
-    border-radius: 30px;
-    font-size: 1.2em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+/* ======= ACTIVE AND HOVER STATES ======= */
+/* Adds a background color to active and hovered links */
+ul li a.active, ul li a:hover {
+    background: #05190A; /* Dark green */
+    transition: 0.5s; /* Smooth transition */
 }
 
-.login-container button:hover {
-    background-color: #8a2be2;
-    transform: scale(1.05);
-}
-
-/* Input Fields */
-input, textarea {
-    color: black; /* Ensures typed text is black */
-    background: rgba(255, 255, 255, 0.2); /* Light background */
-}
-
-/* Responsive Menu */
+/* ======= RESPONSIVE MENU BUTTON ======= */
 .check_btn {
     font-size: 25px;
-    color: white;
-    cursor: pointer;
-    display: none;
+    color: white; /* Makes the icon white */
+    float: left;
+    line-height: 50px;
+    margin-right: 10px;
+    cursor: pointer; /* Makes it clickable */
+    display: none; /* Initially hidden (shown in mobile view) */
 }
 
+/* Hide the checkbox used for toggling the menu */
 #check {
     display: none;
 }
 
+/* ======= RESPONSIVE DESIGN (MOBILE VIEW) ======= */
 @media (max-width: 858px) {
+    /* Show the menu button */
     .check_btn {
         display: block;
     }
-    
-    .navigation ul {
+
+    /* Mobile Navigation Menu */
+    ul {
         position: fixed;
         width: 50%;
-        height: 70vh;
-        background: #b79de0;
+        height: 70vh; /* Takes 70% of the screen height */
+        background: #b79de0; /* Light purple background */
         top: 100px;
-        left: -100%;
+        left: -100%; /* Initially hidden */
         text-align: left;
-        transition: all 0.5s;
-        border: 2px solid #c9c8c8;
-        border-radius: 6px;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-        flex-direction: column;
+        transition: all 0.5s; /* Smooth transition */
+        border: 2px solid #c9c8c8; /* Adds a border */
+        border-radius: 6px; /* Rounds corners */
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Adds a shadow effect */
     }
-    
-    .navigation ul li {
+
+    /* Stack menu items vertically */
+    header .navigation ul li {
+        display: block;
         margin: 50px 0;
+        line-height: 30px;
     }
-    
-    .navigation ul li a {
+
+    /* Increase font size for mobile */
+    header .navigation ul li a {
         font-size: 20px;
     }
-    
+
+    /* When the checkbox is checked, show the menu */
     #check:checked ~ ul {
-        left: 0;
+        left: 0; /* Slide menu into view */
     }
 }
