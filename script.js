@@ -1,34 +1,27 @@
-// Login Modal
-const loginBtn = document.getElementById('loginBtn');
-const loginModal = document.getElementById('loginModal');
-const closeLogin = document.querySelector('#loginModal .close');
+const cover_box = document.querySelector('.cover_box');
+const loginLink = document.querySelector('.login-link');
+const registerLink = document.querySelector('.register-link');
+const btnPopup = document.querySelector('.btnLogin-popup');
+const iconClose = document.querySelector('.icon-close');
 
-loginBtn.addEventListener('click', () => {
-  loginModal.style.display = 'block';
-});
+function activateCoverBox() {
+    cover_box.classList.add('active');
+}
 
-closeLogin.addEventListener('click', () => {
-  loginModal.style.display = 'none';
-});
+function deactivateCoverBox() {
+    cover_box.classList.remove('active');
+}
 
-// Admin Login
-const submitLogin = document.getElementById('submitLogin');
-submitLogin.addEventListener('click', () => {
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  if (username === 'ADMIN' && password === 'admin') {
-    document.getElementById('adminDashboard').classList.remove('hidden');
-    loginModal.style.display = 'none';
-  } else {
-    alert('Invalid credentials');
-  }
-});
+function activatePopup() {
+    cover_box.classList.add('active-popup');
+}
 
-// Wages Calculator
-const calculateWages = document.getElementById('calculateWages');
-calculateWages.addEventListener('click', () => {
-  const hoursWorked = parseFloat(document.getElementById('hoursWorked').value);
-  const wageRate = parseFloat(document.getElementById('wageRateDisplay').value);
-  const totalWages = hoursWorked * wageRate;
-  document.getElementById('totalWages').textContent = totalWages.toFixed(2);
-});
+function deactivatePopup() {
+    cover_box.classList.remove('active-popup');
+}
+
+registerLink.addEventListener('click', activateCoverBox);
+loginLink.addEventListener('click', deactivateCoverBox);
+btnPopup.addEventListener('click', activatePopup);
+iconClose.addEventListener('click', deactivatePopup);
+
