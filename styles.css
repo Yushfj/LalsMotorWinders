@@ -56,6 +56,9 @@ header navigation ul li a {
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
 }
 
 header navigation ul li a::after {
@@ -97,8 +100,23 @@ header .navigation ul li .btnLogin-popup:hover{
     color: #fff;
 }
 
+ul li a.active, ul li a:hover{
+    background: #05190A;
+    transition: .5s;
+}
 
-
+.check_btn{
+    font-size: 25px;
+    color: white;
+    float: left;
+    line-height: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
 
 
 
