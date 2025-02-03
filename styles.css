@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #05190A;
+    background-color: #ffffff;
     position: fixed;
     top: 0;
     left: 0;
@@ -149,5 +149,4 @@ ul li a.active, ul li a:hover{
 }
 
 /* LOGO */
-
 
