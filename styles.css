@@ -28,4 +28,11 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 99;
+    
+    display: block;
+    list-style-type: disc;
+    margin-bottom: 1em;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 40px;
 }
