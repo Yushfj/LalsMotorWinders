@@ -1,0 +1,6 @@
+[
+    {
+      "username": "user1",
+      "password": "$2a$10$exampleHashedPassword"
+    }
+  ]
