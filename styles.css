@@ -1,25 +1,39 @@
-/* General Reset */
+/* 
+   * Reset all default padding, margin, and box-sizing 
+   * Sets default font to 'Poppins' for a modern look
+   * Ensures all text color is white for readability 
+*/
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    color: #fff; /* Ensures all text is white by default */
+    color: #fff; /* Makes all text white */
 }
 
-/* Body Styling */
+/* 
+   * Styles the body to center content 
+   * Sets a full-screen background with an image
+   * Ensures text remains visible over the background
+*/
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url("1.jpg"); /* Background image */
-    background-size: cover; /* Covers entire screen */
-    background-position: center; /* Centers image */
-    color: #fff; /* Keeps default text white */
+    background-image: url("1.jpg"); /* Sets background image */
+    background-size: cover; /* Makes the image cover the entire background */
+    background-position: center; /* Centers the background image */
+    color: #fff; /* Ensures text remains readable */
 }
 
-/* HEADER */
+/* ========== HEADER STYLING ========== */
+
+/* 
+   * Fixes header at the top with a semi-transparent background
+   * Adds a blur effect for a modern glass-like appearance
+   * Aligns navigation items to the right corner 
+*/
 header {
     position: fixed;
     top: 0;
@@ -27,73 +41,80 @@ header {
     width: 100%;
     padding: 20px 100px;
     background-color: rgba(255, 255, 255, 0.2); /* Transparent white */
-    backdrop-filter: blur(10px); /* Blurry effect */
+    backdrop-filter: blur(10px); /* Blurs background slightly */
     display: flex;
-    justify-content: space-between; /* Spreads items out */
+    justify-content: flex-end; /* Pushes nav items to the right */
     align-items: center;
-    z-index: 99; /* Ensures header stays on top */
+    z-index: 99; /* Ensures header stays on top of other content */
 }
 
-/* Logo / Company Name */
-.logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #fff;
-    text-decoration: none;
+/* 
+   * Makes the navigation a horizontal list
+   * Adds space between navigation items 
+*/
+header .navigation ul {
+    display: flex; /* Aligns items in a row */
+    gap: 20px; /* Adds spacing between menu items */
+    list-style: none; /* Removes default list styling */
 }
 
-/* Navigation Menu */
-.navigation {
-    display: flex;
-    align-items: center;
+/* ========== NAVIGATION MENU STYLING ========== */
+
+/* 
+   * Styles the menu links 
+   * Makes the text bold, uppercase, and easier to click
+   * Adds hover effect for better user interaction 
+*/
+header .navigation ul li a {
+    font-size: 1.2em; /* Increases font size */
+    font-weight: bold; /* Makes text bold */
+    text-decoration: none; /* Removes underline */
+    text-transform: uppercase; /* Converts text to uppercase */
+    padding: 10px 15px; /* Adds padding for better clickability */
+    border-radius: 5px; /* Rounds corners slightly */
+    transition: background 0.3s ease; /* Smooth hover transition */
 }
 
-.navigation ul {
-    display: flex; /* Makes menu items inline */
-    gap: 20px; /* Space between items */
-    list-style: none; /* Removes bullet points */
+/* Changes background color on hover */
+header .navigation ul li a:hover {
+    background: #05190A;
 }
 
-/* Menu Links */
-.navigation ul li a {
-    font-size: 1.2em;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background 0.3s ease; /* Smooth hover effect */
-}
+/* ========== TOP LOGIN BUTTON ========== */
 
-.navigation ul li a:hover {
-    background: #05190A; /* Dark green hover effect */
-}
-
-/* TOP LOGIN BUTTON */
-.navigation ul li .btnLogin-popup {
+/* 
+   * Styles the 'LOGIN' button in the header
+   * Makes it larger, rounded, and purple for visibility 
+*/
+header .navigation ul li .btnLogin-popup {
     width: 150px;
     height: 50px;
     background: #4b0082; /* Dark Purple */
     border: none;
-    border-radius: 30px; /* Rounded button */
+    border-radius: 30px; /* Fully rounded */
     cursor: pointer;
     font-size: 1.2em;
-    color: #fff;
+    color: #fff; /* White text */
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s;
 }
 
-.navigation ul li .btnLogin-popup:hover {
+/* Adds hover effect for the top login button */
+header .navigation ul li .btnLogin-popup:hover {
     background-color: #6a0dad; /* Lighter Purple */
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05); /* Slightly enlarges on hover */
 }
 
-/* BOTTOM LOGIN BUTTON */
+/* ========== BOTTOM LOGIN BUTTON ========== */
+
+/* 
+   * Styles the login button in the login form
+   * Matches the design of the header login button 
+*/
 .login-container button {
-    width: 160px;
+    width: 160px; /* Slightly wider */
     height: 50px;
-    background: #6a0dad;
+    background: #6a0dad; /* Lighter purple */
     border: none;
     border-radius: 30px;
     font-size: 1.2em;
@@ -102,58 +123,70 @@ header {
     transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Hover effect for bottom login button */
 .login-container button:hover {
-    background-color: #8a2be2;
+    background-color: #8a2be2; /* Even lighter purple */
     transform: scale(1.05);
 }
 
-/* Input Fields */
-input, textarea {
-    color: black; /* Ensures typed text is black */
-    background: rgba(255, 255, 255, 0.2); /* Light background */
-}
+/* ========== RESPONSIVE MENU FOR MOBILE ========== */
 
-/* Responsive Menu */
+/* 
+   * Hides the responsive menu button by default 
+   * Only visible on small screens 
+*/
 .check_btn {
     font-size: 25px;
     color: white;
     cursor: pointer;
-    display: none;
+    display: none; /* Hidden on larger screens */
 }
 
+/* Hides checkbox input */
 #check {
     display: none;
 }
 
+/* 
+   * Styles for smaller screens (max-width: 858px)
+   * Displays a collapsible menu 
+*/
 @media (max-width: 858px) {
     .check_btn {
-        display: block;
+        display: block; /* Shows menu button */
     }
-    
-    .navigation ul {
+
+    /* 
+       * Styles the mobile navigation menu 
+       * Makes it a vertical list with a background 
+    */
+    header .navigation ul {
         position: fixed;
         width: 50%;
         height: 70vh;
-        background: #b79de0;
+        background: #b79de0; /* Light purple */
         top: 100px;
-        left: -100%;
+        left: -100%; /* Initially hidden */
         text-align: left;
-        transition: all 0.5s;
-        border: 2px solid #c9c8c8;
+        transition: all 0.5s ease; /* Smooth slide effect */
+        border: 2px solid #c9c8c8; /* Light border */
         border-radius: 6px;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-        flex-direction: column;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Soft shadow */
+        flex-direction: column; /* Stacks items vertically */
     }
-    
-    .navigation ul li {
+
+    /* Adds space between mobile menu items */
+    header .navigation ul li {
         margin: 50px 0;
     }
-    
-    .navigation ul li a {
+
+    /* Increases font size for better readability on mobile */
+    header .navigation ul li a {
         font-size: 20px;
     }
-    
+
+    /* Shows menu when checkbox is checked */
     #check:checked ~ ul {
-        left: 0;
+        left: 0; /* Slides menu into view */
     }
 }
