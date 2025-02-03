@@ -1,31 +1,31 @@
-*{
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-body{
+body {
     display: flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    background-image:url(4.jpg);
-    background-size:cover;
-    background-position:center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("4.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-header{
-    background-color:#05190A;
+header {
+    background-color: #05190A;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    background-color:(225,225,225,0);
-    backdrop-filter:blur(10px);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:99;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
 }
