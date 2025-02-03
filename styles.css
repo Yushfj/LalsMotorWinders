@@ -58,7 +58,7 @@ header navigation ul li a::after {
     transform-origin: 50% 50%;
     transform: scaleX(0);
     transition: transform 0.5s;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px (255, 255, 255, 0.8);
     background: linear-gradient(to right, #fff, #f3f3f3);
 }
 
@@ -67,7 +67,7 @@ header navigation ul li a:hover::after {
     transform: scaleX(1);
 }
 
-header navigation ul li .btn-login-popup {
+header .navigation ul li .btnLogin-popup {
     width: 130px;
     height: 50px;
     background: transparent;
@@ -80,6 +80,23 @@ header navigation ul li .btn-login-popup {
     font-weight: 500;
     margin-left: 40px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 header navigation ul li .btn-login-popup:hover {
     background-color: #05190A;
