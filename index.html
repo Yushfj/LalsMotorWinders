@@ -1,91 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lal's Motor Winders (FIJI) PTE Limited</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Code Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <img src="logo.png" alt="Company Logo">
-    <h1>Lal's Motor Winders (FIJI) PTE Limited</h1>
-    <div>
-      <button id="loginBtn">Login</button>
-      <button id="registerBtn">Register</button>
-    </div>
-  </header>
+    <header>
+        <div class="navigation">
+            <input type="checkbox" id="check">
+            <label for="check" class="check-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo">DIGITAL CODE HUB</label>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><button class="btnlogin-popup">Login</button></li>
+            </ul>
+        </div>
+    </header>
+</body>
+</html>
 
-  <!-- Login Modal -->
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Login</h2>
-      <input type="text" id="username" placeholder="Username">
-      <input type="password" id="password" placeholder="Password">
-      <button id="submitLogin">Login</button>
+    <div class="cover_box">
+        <span class="icon-close">
+            <ion-icon name="close-outline"></ion-icon>
+        </span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
 
-  <!-- Registration Modal -->
-  <div id="registerModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Register</h2>
-      <button id="employeeRegBtn">Employee Registration</button>
-      <button id="customerRegBtn">Customer Registration</button>
-    </div>
-  </div>
-
-  <!-- Employee Registration Form -->
-  <div id="employeeForm" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Employee Registration</h2>
-      <input type="text" id="firstName" placeholder="First Name">
-      <input type="text" id="lastName" placeholder="Last Name">
-      <input type="text" id="fnpfNumber" placeholder="FNPF Number">
-      <input type="text" id="phoneNumber" placeholder="Phone Number">
-      <select id="branch">
-        <option value="branch1">Branch 1</option>
-        <option value="branch2">Branch 2</option>
-      </select>
-      <input type="number" id="wageRate" placeholder="Wage Rate">
-      <button id="submitEmployee">Submit</button>
-    </div>
-  </div>
-
-  <!-- Customer Registration Form -->
-  <div id="customerForm" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Customer Registration</h2>
-      <input type="text" id="customerName" placeholder="Customer Name">
-      <input type="text" id="customerPhone" placeholder="Phone Number">
-      <input type="text" id="customerAddress" placeholder="Address">
-      <button id="submitCustomer">Submit</button>
-    </div>
-  </div>
-
-  <!-- Admin Dashboard -->
-  <div id="adminDashboard" class="hidden">
-    <h2>Welcome, Admin</h2>
-    <nav>
-      <button id="editEmployeeBtn">Edit Employee Details</button>
-      <button id="editCustomerBtn">Edit Customer Details</button>
-      <button id="wagesCalculatorBtn">Wages Calculator</button>
-    </nav>
-    <!-- Wages Calculator -->
-    <div id="wagesCalculator" class="hidden">
-      <select id="employeeSelect"></select>
-      <input type="number" id="hoursWorked" placeholder="Hours Worked">
-      <input type="number" id="wageRateDisplay" readonly>
-      <p>Total Wages: <span id="totalWages"></span></p>
-      <button id="calculateWages">Calculate</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
