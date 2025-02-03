@@ -38,6 +38,17 @@ header {
 }
 
 
+header .navigation ul{
+    float:right;
+    margin-right: 20px;
+}
+
+header .navigation ul li {
+    display: inline-block;
+    line-height: 50px;
+    margin: 0.5px;
+}
+
 header navigation ul li a {
     position: relative;
     font-size: 1.1em;
@@ -85,6 +96,8 @@ header .navigation ul li .btnLogin-popup:hover{
     background-color: #05190A;
     color: #fff;
 }
+
+
 
 
 
