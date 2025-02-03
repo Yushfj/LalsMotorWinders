@@ -1,61 +1,34 @@
-// Open/Close Modal Functions
-function openLoginModal() {
-    document.getElementById('loginModal').style.display = 'flex';
-}
+// Login Modal
+const loginBtn = document.getElementById('loginBtn');
+const loginModal = document.getElementById('loginModal');
+const closeLogin = document.querySelector('#loginModal .close');
 
-function closeLoginModal() {
-    document.getElementById('loginModal').style.display = 'none';
-}
+loginBtn.addEventListener('click', () => {
+  loginModal.style.display = 'block';
+});
 
-function openRegisterModal() {
-    document.getElementById('registerModal').style.display = 'flex';
-}
-
-function closeRegisterModal() {
-    document.getElementById('registerModal').style.display = 'none';
-}
-
-function openEmployeeRegister() {
-    document.getElementById('employeeRegisterModal').style.display = 'flex';
-}
-
-function closeEmployeeRegisterModal() {
-    document.getElementById('employeeRegisterModal').style.display = 'none';
-}
-
-function openCustomerRegister() {
-    document.getElementById('customerRegisterModal').style.display = 'flex';
-}
-
-function closeCustomerRegisterModal() {
-    document.getElementById('customerRegisterModal').style.display = 'none';
-}
-
-function openWagesCalculator() {
-    document.getElementById('wagesCalculatorModal').style.display = 'flex';
-}
-
-function closeWagesCalculatorModal() {
-    document.getElementById('wagesCalculatorModal').style.display = 'none';
-}
+closeLogin.addEventListener('click', () => {
+  loginModal.style.display = 'none';
+});
 
 // Admin Login
-function login() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    
-    if (username === 'ADMIN' && password === 'admin') {
-        document.getElementById('loginModal').style.display = 'none';
-        document.getElementById('adminDashboard').style.display = 'block';
-    } else {
-        alert('Invalid credentials');
-    }
-}
+const submitLogin = document.getElementById('submitLogin');
+submitLogin.addEventListener('click', () => {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  if (username === 'ADMIN' && password === 'admin') {
+    document.getElementById('adminDashboard').classList.remove('hidden');
+    loginModal.style.display = 'none';
+  } else {
+    alert('Invalid credentials');
+  }
+});
 
-// Wages Calculation
-function calculateWages() {
-    const hoursWorked = document.getElementById('hoursWorked').value;
-    const wageRate = document.getElementById('wageRate').value;
-    const wages = hoursWorked * wageRate;
-    document.getElementById('calculatedWages').innerText = 'Calculated Wages: $' + wages;
-}
+// Wages Calculator
+const calculateWages = document.getElementById('calculateWages');
+calculateWages.addEventListener('click', () => {
+  const hoursWorked = parseFloat(document.getElementById('hoursWorked').value);
+  const wageRate = parseFloat(document.getElementById('wageRateDisplay').value);
+  const totalWages = hoursWorked * wageRate;
+  document.getElementById('totalWages').textContent = totalWages.toFixed(2);
+});
