@@ -1,34 +1,38 @@
+/* Universal selector to apply styles to all elements */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    font-family: "Poppins", sans-serif; /* Set default font family */
 }
 
+/* Styles for the body element */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url("1.jpg");
-    background-size: cover;
-    background-position: center;
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+    background-image: url("1.jpg"); /* Set background image */
+    background-size: cover; /* Scale background image to cover the entire body */
+    background-position: center; /* Center the background image */
 }
 
+/* Styles for the header element */
 header {
-    background-color: #100b0b;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
+    background-color: #100b0b; /* Fallback background color */
+    position: fixed; /* Fix the header at the top of the page */
+    top: 0; /* Position at the top of the viewport */
+    left: 0; /* Position at the left of the viewport */
+    width: 100%; /* Make the header span the full width of the page */
+    padding: 20px 100px; /* Add padding inside the header */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out child elements */
+    align-items: center; /* Center child elements vertically */
+    z-index: 99; /* Ensure the header stays above other content */
     
+    /* Reset default list styles */
     display: block;
     list-style-type: disc;
     margin-bottom: 1em;
@@ -37,116 +41,125 @@ header {
     padding-left: 40px;
 }
 
-
-header .navigation ul{
-    float:right;
-    margin-right: 20px;
+/* Styles for the navigation unordered list */
+header .navigation ul {
+    float: right; /* Float the navigation to the right */
+    margin-right: 20px; /* Add margin to the right */
 }
 
+/* Styles for each list item in the navigation */
 header .navigation ul li {
-    display: inline-block;
-    line-height: 50px;
-    margin: 0.5px;
+    display: inline-block; /* Display list items inline */
+    line-height: 50px; /* Set line height */
+    margin: 0.5px; /* Add small margin between items */
 }
 
+/* Styles for navigation links */
 header navigation ul li a {
-    position: relative;
-    font-size: 1.1em;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 40px;
-    padding: 7px 13px;
-    border-radius: 3px;
-    text-transform: uppercase;
+    position: relative; /* Set position to relative for pseudo-elements */
+    font-size: 1.1em; /* Set font size */
+    color: #fff; /* Set text color to white */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: 500; /* Set font weight */
+    margin-left: 40px; /* Add margin to the left */
+    padding: 7px 13px; /* Add padding inside links */
+    border-radius: 3px; /* Round the corners */
+    text-transform: uppercase; /* Convert text to uppercase */
 }
 
+/* Styles for the underline effect on hover */
 header navigation ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 100%;
-    height: 3px;
-    border-radius: 5px;
-    transform-origin: 50% 50%;
-    transform: scaleX(0);
-    transition: transform 0.5s;
-    box-shadow: 0 0 10px (255, 255, 255, 0.8);
-    background: linear-gradient(to right, #fff, #f3f3f3);
+    content: ""; /* Add content for the pseudo-element */
+    position: absolute; /* Position absolutely within the link */
+    left: 0; /* Start from the left */
+    bottom: -6px; /* Position below the link */
+    width: 100%; /* Span the full width of the link */
+    height: 3px; /* Set height of the underline */
+    border-radius: 5px; /* Round the corners */
+    transform-origin: 50% 50%; /* Set transform origin */
+    transform: scaleX(0); /* Initially hide the underline */
+    transition: transform 0.5s; /* Add transition for smooth animation */
+    box-shadow: 0 0 10px (255, 255, 255, 0.8); /* Add shadow effect */
+    background: linear-gradient(to right, #fff, #f3f3f3); /* Gradient background */
 }
 
+/* Show underline on hover */
 header navigation ul li a:hover::after {
-    transform-origin: right;
-    transform: scaleX(1);
+    transform-origin: right; /* Set transform origin to the right */
+    transform: scaleX(1); /* Scale the underline to full width */
 }
 
+/* Styles for the login button */
 header .navigation ul li .btnLogin-popup {
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid #fff;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 40px;
+    width: 130px; /* Set width */
+    height: 50px; /* Set height */
+    background: transparent; /* Transparent background */
+    border: 2px solid #fff; /* White border */
+    outline: none; /* Remove outline */
+    border-radius: 6px; /* Round the corners */
+    cursor: pointer; /* Change cursor to pointer */
+    font-size: 1.1em; /* Set font size */
+    color: #fff; /* White text color */
+    font-weight: 500; /* Set font weight */
+    margin-left: 40px; /* Add margin to the left */
 }
 
-header .navigation ul li .btnLogin-popup:hover{
-    background-color: #c1a3e6;
-    color: #fff;
+/* Hover effect for the login button */
+header .navigation ul li .btnLogin-popup:hover {
+    background-color: #c1a3e6; /* Change background color on hover */
+    color: #fff; /* Keep text color white */
 }
 
-ul li a.active, ul li a:hover{
-    background: #05190A;
-    transition: .5s;
+/* Active and hover styles for navigation links */
+ul li a.active, ul li a:hover {
+    background: #05190A; /* Change background color */
+    transition: .5s; /* Add transition for smooth effect */
 }
 
-.check_btn{
-    font-size: 25px;
-    color: white;
-    float: left;
-    line-height: 50px;
-    margin-right: 10px;
-    cursor: pointer;
+/* Styles for the mobile menu button */
+.check_btn {
+    font-size: 25px; /* Set font size */
+    color: white; /* White color */
+    float: left; /* Float to the left */
+    line-height: 50px; /* Set line height */
+    margin-right: 10px; /* Add margin to the right */
+    cursor: pointer; /* Change cursor to pointer */
+    display: none; /* Hide by default */
+}
+
+/* Hide the checkbox */
+#check {
     display: none;
 }
-#check{
-    display: none;
-}
 
-@media(max-width:858px){
-    .check_btn{
-        display:block;
+/* Responsive styles for screens smaller than 858px */
+@media (max-width: 858px) {
+    .check_btn {
+        display: block; /* Show the mobile menu button */
     }
-    ul{
-        position: fixed;
-        width:50%;
-        height: 70vh;
-        background: #b79de0;
-        top: 100px;
-        left: -100%;
-        text-align: left;
-        transition: all .5s;
-        border: 2px solid #c9c8c8;
-        border-radius: 6px;
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    ul {
+        position: fixed; /* Fix the navigation menu */
+        width: 50%; /* Set width */
+        height: 70vh; /* Set height */
+        background: #b79de0; /* Background color */
+        top: 100px; /* Position from the top */
+        left: -100%; /* Hide off-screen by default */
+        text-align: left; /* Align text to the left */
+        transition: all .5s; /* Add transition for smooth animation */
+        border: 2px solid #c9c8c8; /* Add border */
+        border-radius: 6px; /* Round the corners */
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Add shadow */
     }
     header .navigation ul li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
+        display: block; /* Display list items as blocks */
+        margin: 50px 0; /* Add margin */
+        line-height: 30px; /* Set line height */
     }
     header .navigation ul li a {
-        font-size: 20px;
+        font-size: 20px; /* Increase font size */
     }
-    #check:checked ~ ul{
+    /* Show the navigation menu when the checkbox is checked */
+    #check:checked ~ ul {
         left: 0;
     }
 }
-
-/* LOGO */
-
