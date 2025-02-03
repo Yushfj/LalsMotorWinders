@@ -44,7 +44,6 @@ header .navigation ul {
 /* Navigation List Items */
 header .navigation ul li {
     display: inline-block; /* Keeps items in one line */
-    float: left;
     line-height: 50px; /* Aligns menu items with the header height */
     margin: 0.5px; /* Adds spacing between items */
 }
