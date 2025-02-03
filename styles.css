@@ -1,165 +1,165 @@
-/* Universal selector to apply styles to all elements */
+/* CSS Variables for easy theme management */
+:root {
+    --primary-color: #100b0b;
+    --secondary-color: #c1a3e6;
+    --text-color: #fff;
+    --background-color: rgba(255, 255, 255, 0.2);
+    --blur-intensity: blur(10px);
+    --transition-speed: 0.3s;
+}
+
+/* Reset and Base Styles */
 * {
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    box-sizing: border-box; /* Include padding and border in element's total width/height */
-    font-family: "Poppins", sans-serif; /* Set default font family */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-/* Styles for the body element */
 body {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    min-height: 100vh; /* Set minimum height to 100% of the viewport height */
-    background-image: url("1.jpg"); /* Set background image */
-    background-size: cover; /* Scale background image to cover the entire body */
-    background-position: center; /* Center the background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("1.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-/* Styles for the header element */
+/* Header Styles */
 header {
-    background-color: #100b0b; /* Fallback background color */
-    position: fixed; /* Fix the header at the top of the page */
-    top: 0; /* Position at the top of the viewport */
-    left: 0; /* Position at the left of the viewport */
-    width: 100%; /* Make the header span the full width of the page */
-    padding: 20px 100px; /* Add padding inside the header */
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space out child elements */
-    align-items: center; /* Center child elements vertically */
-    z-index: 99; /* Ensure the header stays above other content */
-    
-    /* Reset default list styles */
-    display: block;
-    list-style-type: disc;
-    margin-bottom: 1em;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background-color: var(--background-color);
+    backdrop-filter: var(--blur-intensity);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
 }
 
-/* Styles for the navigation unordered list */
-header .navigation ul {
-    float: right; /* Float the navigation to the right */
-    margin-right: 20px; /* Add margin to the right */
+/* Navigation Styles */
+.navigation {
+    display: flex;
+    align-items: center;
 }
 
-/* Styles for each list item in the navigation */
-header .navigation ul li {
-    display: inline-block; /* Display list items inline */
-    line-height: 50px; /* Set line height */
-    margin: 0.5px; /* Add small margin between items */
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Use gap for spacing between items */
 }
 
-/* Styles for navigation links */
-header navigation ul li a {
-    position: relative; /* Set position to relative for pseudo-elements */
-    font-size: 1.1em; /* Set font size */
-    color: #fff; /* Set text color to white */
-    text-decoration: none; /* Remove underline from links */
-    font-weight: 500; /* Set font weight */
-    margin-left: 40px; /* Add margin to the left */
-    padding: 7px 13px; /* Add padding inside links */
-    border-radius: 3px; /* Round the corners */
-    text-transform: uppercase; /* Convert text to uppercase */
+.navigation ul li {
+    display: inline-block;
 }
 
-/* Styles for the underline effect on hover */
-header navigation ul li a::after {
-    content: ""; /* Add content for the pseudo-element */
-    position: absolute; /* Position absolutely within the link */
-    left: 0; /* Start from the left */
-    bottom: -6px; /* Position below the link */
-    width: 100%; /* Span the full width of the link */
-    height: 3px; /* Set height of the underline */
-    border-radius: 5px; /* Round the corners */
-    transform-origin: 50% 50%; /* Set transform origin */
-    transform: scaleX(0); /* Initially hide the underline */
-    transition: transform 0.5s; /* Add transition for smooth animation */
-    box-shadow: 0 0 10px (255, 255, 255, 0.8); /* Add shadow effect */
-    background: linear-gradient(to right, #fff, #f3f3f3); /* Gradient background */
+.navigation ul li a {
+    position: relative;
+    font-size: 1.1em;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-/* Show underline on hover */
-header navigation ul li a:hover::after {
-    transform-origin: right; /* Set transform origin to the right */
-    transform: scaleX(1); /* Scale the underline to full width */
+.navigation ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--text-color), #f3f3f3);
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-speed);
 }
 
-/* Styles for the login button */
-header .navigation ul li .btnLogin-popup {
-    width: 130px; /* Set width */
-    height: 50px; /* Set height */
-    background: transparent; /* Transparent background */
-    border: 2px solid #fff; /* White border */
-    outline: none; /* Remove outline */
-    border-radius: 6px; /* Round the corners */
-    cursor: pointer; /* Change cursor to pointer */
-    font-size: 1.1em; /* Set font size */
-    color: #fff; /* White text color */
-    font-weight: 500; /* Set font weight */
-    margin-left: 40px; /* Add margin to the left */
+.navigation ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
-/* Hover effect for the login button */
-header .navigation ul li .btnLogin-popup:hover {
-    background-color: #c1a3e6; /* Change background color on hover */
-    color: #fff; /* Keep text color white */
+.navigation ul li a.active,
+.navigation ul li a:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }
 
-/* Active and hover styles for navigation links */
-ul li a.active, ul li a:hover {
-    background: #05190A; /* Change background color */
-    transition: .5s; /* Add transition for smooth effect */
+/* Login Button Styles */
+.btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-/* Styles for the mobile menu button */
+.btnLogin-popup:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Mobile Menu Styles */
 .check_btn {
-    font-size: 25px; /* Set font size */
-    color: white; /* White color */
-    float: left; /* Float to the left */
-    line-height: 50px; /* Set line height */
-    margin-right: 10px; /* Add margin to the right */
-    cursor: pointer; /* Change cursor to pointer */
-    display: none; /* Hide by default */
+    font-size: 25px;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none; /* Hidden by default */
 }
 
-/* Hide the checkbox */
 #check {
-    display: none;
+    display: none; /* Hide the checkbox */
 }
 
-/* Responsive styles for screens smaller than 858px */
+/* Responsive Design */
 @media (max-width: 858px) {
+    header {
+        padding: 20px 50px; /* Reduce padding for smaller screens */
+    }
+
     .check_btn {
         display: block; /* Show the mobile menu button */
     }
-    ul {
-        position: fixed; /* Fix the navigation menu */
-        width: 50%; /* Set width */
-        height: 70vh; /* Set height */
-        background: #b79de0; /* Background color */
-        top: 100px; /* Position from the top */
-        left: -100%; /* Hide off-screen by default */
-        text-align: left; /* Align text to the left */
-        transition: all .5s; /* Add transition for smooth animation */
-        border: 2px solid #c9c8c8; /* Add border */
-        border-radius: 6px; /* Round the corners */
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Add shadow */
+
+    .navigation ul {
+        position: fixed;
+        top: 80px; /* Adjust based on header height */
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px); /* Full height minus header */
+        background-color: var(--secondary-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: left var(--transition-speed);
+        z-index: 98;
     }
-    header .navigation ul li {
-        display: block; /* Display list items as blocks */
-        margin: 50px 0; /* Add margin */
-        line-height: 30px; /* Set line height */
+
+    .navigation ul li {
+        margin: 20px 0;
     }
-    header .navigation ul li a {
-        font-size: 20px; /* Increase font size */
+
+    .navigation ul li a {
+        font-size: 1.5em; /* Larger font size for mobile */
     }
-    /* Show the navigation menu when the checkbox is checked */
-    #check:checked ~ ul {
+
+    /* Show the menu when the checkbox is checked */
+    #check:checked ~ .navigation ul {
         left: 0;
     }
 }
