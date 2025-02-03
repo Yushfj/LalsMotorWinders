@@ -13,10 +13,10 @@ body {
     background-image: url("1.jpg");
     background-size: cover;
     background-position: center;
+    color: #fff; /* Makes all text white */
 }
 
 header {
-    background-color: #ffffff;
     position: fixed;
     top: 0;
     left: 0;
@@ -28,18 +28,10 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 99;
-    
-    display: block;
-    list-style-type: disc;
-    margin-bottom: 1em;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 40px;
 }
 
-
-header .navigation ul{
-    float:right;
+header .navigation ul {
+    float: right;
     margin-right: 20px;
 }
 
@@ -49,10 +41,10 @@ header .navigation ul li {
     margin: 0.5px;
 }
 
-header navigation ul li a {
+header .navigation ul li a {
     position: relative;
     font-size: 1.1em;
-    color: #fff;
+    color: #fff; /* Fixes text color */
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
@@ -61,7 +53,7 @@ header navigation ul li a {
     text-transform: uppercase;
 }
 
-header navigation ul li a::after {
+header .navigation ul li a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -72,11 +64,11 @@ header navigation ul li a::after {
     transform-origin: 50% 50%;
     transform: scaleX(0);
     transition: transform 0.5s;
-    box-shadow: 0 0 10px (255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     background: linear-gradient(to right, #fff, #f3f3f3);
 }
 
-header navigation ul li a:hover::after {
+header .navigation ul li a:hover::after {
     transform-origin: right;
     transform: scaleX(1);
 }
@@ -93,19 +85,20 @@ header .navigation ul li .btnLogin-popup {
     color: #fff;
     font-weight: 500;
     margin-left: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-header .navigation ul li .btnLogin-popup:hover{
+header .navigation ul li .btnLogin-popup:hover {
     background-color: #c1a3e6;
     color: #fff;
 }
 
-ul li a.active, ul li a:hover{
+ul li a.active, ul li a:hover {
     background: #05190A;
     transition: .5s;
 }
 
-.check_btn{
+.check_btn {
     font-size: 25px;
     color: white;
     float: left;
@@ -114,17 +107,18 @@ ul li a.active, ul li a:hover{
     cursor: pointer;
     display: none;
 }
-#check{
+
+#check {
     display: none;
 }
 
-@media(max-width:858px){
-    .check_btn{
-        display:block;
+@media (max-width: 858px) {
+    .check_btn {
+        display: block;
     }
-    ul{
+    ul {
         position: fixed;
-        width:50%;
+        width: 50%;
         height: 70vh;
         background: #b79de0;
         top: 100px;
@@ -143,10 +137,7 @@ ul li a.active, ul li a:hover{
     header .navigation ul li a {
         font-size: 20px;
     }
-    #check:checked ~ ul{
+    #check:checked ~ ul {
         left: 0;
     }
 }
-
-/* LOGO */
-
