@@ -1,4 +1,4 @@
-/* CSS Variables for easy theme management */
+/* CSS Variables for consistent theming */
 :root {
     --primary-color: #100b0b;
     --secondary-color: #c1a3e6;
@@ -6,12 +6,13 @@
     --background-color: rgba(255, 255, 255, 0.2);
     --blur-intensity: blur(10px);
     --transition-speed: 0.3s;
+    --border-radius: 6px;
 }
 
 /* Reset and Base Styles */
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
@@ -50,11 +51,7 @@ header {
 .navigation ul {
     list-style: none;
     display: flex;
-    gap: 20px; /* Use gap for spacing between items */
-}
-
-.navigation ul li {
-    display: inline-block;
+    gap: 20px; /* Use gap for consistent spacing */
 }
 
 .navigation ul li a {
@@ -64,7 +61,7 @@ header {
     text-decoration: none;
     font-weight: 500;
     padding: 7px 13px;
-    border-radius: 3px;
+    border-radius: var(--border-radius);
     text-transform: uppercase;
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
@@ -77,7 +74,7 @@ header {
     width: 100%;
     height: 3px;
     background: linear-gradient(to right, var(--text-color), #f3f3f3);
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform var(--transition-speed);
@@ -101,7 +98,7 @@ header {
     background: transparent;
     border: 2px solid var(--text-color);
     outline: none;
-    border-radius: 6px;
+    border-radius: var(--border-radius);
     cursor: pointer;
     font-size: 1.1em;
     color: var(--text-color);
@@ -114,16 +111,12 @@ header {
     color: var(--text-color);
 }
 
-/* Mobile Menu Styles */
-.check_btn {
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none; /* Hidden by default */
     font-size: 25px;
     color: var(--text-color);
     cursor: pointer;
-    display: none; /* Hidden by default */
-}
-
-#check {
-    display: none; /* Hide the checkbox */
 }
 
 /* Responsive Design */
@@ -132,8 +125,8 @@ header {
         padding: 20px 50px; /* Reduce padding for smaller screens */
     }
 
-    .check_btn {
-        display: block; /* Show the mobile menu button */
+    .menu-toggle {
+        display: block; /* Show the toggle button */
     }
 
     .navigation ul {
@@ -158,7 +151,7 @@ header {
         font-size: 1.5em; /* Larger font size for mobile */
     }
 
-    /* Show the menu when the checkbox is checked */
+    /* Show the menu when the toggle is active */
     #check:checked ~ .navigation ul {
         left: 0;
     }
