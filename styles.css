@@ -15,53 +15,44 @@ body {
     background-position: center;
 }
 
+/* Header Styles */
 header {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 99;
-    
-    display: block;
-    list-style-type: disc;
-    margin-bottom: 1em;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 40px;
 }
 
-
-header .navigation ul{
-    float:right;
-    margin-right: 20px;
+/* Navigation Styles */
+header .navigation ul {
+    display: flex;
+    list-style: none;
 }
 
 header .navigation ul li {
-    display: inline-block;
-    line-height: 50px;
-    margin: 0.5px;
+    margin: 0 10px;
 }
 
-header navigation ul li a {
+header .navigation ul li a {
     position: relative;
     font-size: 1.1em;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 40px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
+    transition: background 0.3s ease-in-out;
 }
 
-header navigation ul li a::after {
+header .navigation ul li a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -72,11 +63,11 @@ header navigation ul li a::after {
     transform-origin: 50% 50%;
     transform: scaleX(0);
     transition: transform 0.5s;
-    box-shadow: 0 0 10px (255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     background: linear-gradient(to right, #fff, #f3f3f3);
 }
 
-header navigation ul li a:hover::after {
+header .navigation ul li a:hover::after {
     transform-origin: right;
     transform: scaleX(1);
 }
@@ -92,60 +83,68 @@ header .navigation ul li .btnLogin-popup {
     font-size: 1.1em;
     color: #fff;
     font-weight: 500;
-    margin-left: 40px;
+    transition: background-color 0.3s ease-in-out;
 }
 
-header .navigation ul li .btnLogin-popup:hover{
+header .navigation ul li .btnLogin-popup:hover {
     background-color: #c1a3e6;
     color: #fff;
 }
 
-ul li a.active, ul li a:hover{
+/* Active and Hover Effects */
+ul li a.active, ul li a:hover {
     background: #05190A;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-.check_btn{
+/* Hamburger Menu */
+.check_btn {
     font-size: 25px;
     color: white;
-    float: left;
+    float: right;
     line-height: 50px;
-    margin-right: 10px;
+    margin-right: 20px;
     cursor: pointer;
     display: none;
 }
-#check{
+
+#check {
     display: none;
 }
 
-@media(max-width:858px){
-    .check_btn{
-        display:block;
+/* Responsive Design */
+@media (max-width: 858px) {
+    .check_btn {
+        display: block;
     }
-    ul{
+
+    header .navigation ul {
         position: fixed;
-        width:50%;
+        width: 50%;
         height: 70vh;
         background: #b79de0;
         top: 100px;
         left: -100%;
         text-align: left;
-        transition: all .5s;
+        transition: all 0.5s;
         border: 2px solid #c9c8c8;
         border-radius: 6px;
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        align-items: start;
+        padding: 20px;
     }
+
     header .navigation ul li {
         display: block;
-        margin: 50px 0;
-        line-height: 30px;
+        margin: 20px 0;
     }
+
     header .navigation ul li a {
         font-size: 20px;
     }
-    #check:checked ~ ul{
+
+    #check:checked ~ ul {
         left: 0;
     }
 }
-
-/* LOGO */
