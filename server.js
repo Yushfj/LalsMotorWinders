@@ -15,6 +15,7 @@ function deactivateForgotPassword() {
     coverBox.classList.remove('active-forgot');
 }
 
+// Event Listeners
 forgotPasswordLink.addEventListener('click', (e) => {
     e.preventDefault(); // Prevent the default link behavior
     activateForgotPassword();
@@ -23,6 +24,15 @@ forgotPasswordLink.addEventListener('click', (e) => {
 loginLink.addEventListener('click', (e) => {
     e.preventDefault(); // Prevent the default link behavior
     deactivateForgotPassword();
+});
+
+iconClose.addEventListener('click', () => {
+    coverBox.classList.remove('active-popup');
+    deactivateForgotPassword();
+});
+
+btnPopup.addEventListener('click', () => {
+    coverBox.classList.add('active-popup');
 });
 
 // Handle Forgot Password Form Submission
